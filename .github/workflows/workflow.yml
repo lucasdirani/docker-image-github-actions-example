@@ -1,8 +1,8 @@
 name: Test workflow
 
 on:
-    push:
-        branches: [main]
+  push:
+    branches: [ "master" ]
 
 jobs:
     docker_image:
