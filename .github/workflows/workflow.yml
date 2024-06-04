@@ -1,0 +1,19 @@
+name: Test workflow
+
+on:
+    push:
+        branches: [main]
+
+jobs:
+    docker_image:
+        name: Push docker image to DockerHub
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Docker Login
+              uses: docker/login-action@v3.0.0
+              with:
+                username: 'lruizd'
+                password: ${{secrets.DOCKERHUB_PASSWORD}}
