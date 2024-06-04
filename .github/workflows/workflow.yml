@@ -17,3 +17,10 @@ jobs:
               with:
                 username: 'lruizd'
                 password: ${{secrets.DOCKERHUB_PASSWORD}}
+            
+            - name: Build and push Docker images
+              uses: docker/build-push-action@v5.0.0
+              with:
+                tags: 'lruizd/fiap-github-actions:latest'
+                context: ./src
+                push: true
